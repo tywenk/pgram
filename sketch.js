@@ -7,14 +7,17 @@ console.log('ml5 version:', ml5.version)
 let video
 let poseNet
 let pose
-let x = 1
-let y = 1
-let easing = 0.09
+// let x = 1
+// let y = 1
+let easing = 0.08
 const sensY = -2
 const sensX = 1
 
 function setup() {
-  createCanvas(1280, 720)
+  // createCanvas(1280, 720)
+
+  var myCanvas = createCanvas(1280, 720)
+  myCanvas.parent('video-container')
 
   video = createCapture(
     {

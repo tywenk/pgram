@@ -3,6 +3,25 @@ body {
 }
 
 a-scene {
-  width: 1024px;
-  height: 1024px;
+}
+
+#video-container {
+  z-index: 20;
+  position: absolute;
+  border: 1px solid black;
+  bottom: 0;
+  right: 0;
+}
+
+#gltf-menu {
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  size: 1;
+}
+
+#gltf-menu option {
+  width: 150px;
 }

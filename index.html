@@ -1,35 +1,110 @@
+<!-- 
+  
+  Tywen Kelly
+  Marc Schroeder 
+
+-->
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Worlding</title>
+    <link rel="stylesheet" href="style.css" />
 
     <!-- a-frame -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <!-- p5 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
     <!-- ml5 -->
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
   </head>
   <body>
-    <script src="sketch.js"></script>
-    <!-- <a-scene>
+    <!-- declare x & y head rotation values -->
+    <script>
+      let x = 1
+      let y = 1
+      let activeModel = 'fox'
+    </script>
+    <!-- creative a-frame component that can rotated by head -->
+    <script src="components.js"></script>
+    <!-- create a-frame scene -->
+    <a-scene>
       <a-assets>
         <a-asset-items
           id="tree"
           response-type="array-buffer"
           src="assets\gltf\wallingford-cherry-tree.glb"
         ></a-asset-items>
+
+        <a-asset-items
+          id="fox"
+          response-type="array-buffer"
+          src="assets\gltf\fox.glb"
+        ></a-asset-items>
+
+        <a-asset-items
+          id="sofa"
+          response-type="array-buffer"
+          src="assets\gltf\sofa.glb"
+        ></a-asset-items>
+
+        <a-asset-items id="sky"></a-asset-items>
       </a-assets>
 
-      <a-sky src="#sky"></a-sky>
+      <!-- <a-sky src="#sky"></a-sky> -->
 
       <a-entity
-        gltf-model="#tree"
+        gltf-model="#fox"
         position="0 0 0"
-        scale="0.001 0.001 0.001"
+        scale="0.01 0.01 0.01"
+        rotation="0 0 0"
+        headreactive
+        gltfchoice="model: fox"
       ></a-entity>
+
+      <a-entity
+        gltf-model="#sofa"
+        position="0 0 0"
+        scale="0.1 0.1 0.1"
+        rotation="0 0 0"
+        headreactive
+        gltfchoice="model: sofa"
+      ></a-entity>
+
+      <!--
+      <a-entity
+        geometry="primitive: box"
+        position="0 1 0"
+        rotation="0 0 0"
+        id="box-temp"
+        headreactive
+        gltfchoice
+      ></a-entity>
+      <a-entity
+        geometry="primitive: box"
+        position="0 3 0"
+        rotation="0 0 0"
+        id="box-temp"
+        headreactive
+        gltfchoice
+      ></a-entity
+      ><a-entity
+        geometry="primitive: box"
+        position="1 2 0"
+        rotation="0 0 0"
+        id="box-temp"
+        headreactive
+      ></a-entity
+      ><a-entity
+        geometry="primitive: box"
+        position="0 0 3"
+        rotation="0 0 0"
+        id="box-temp"
+        headreactive
+      ></a-entity> -->
 
       <a-entity
         geometry="primitive: plane; width: 10; height: 10"
@@ -48,6 +123,27 @@
       <a-entity light="type: ambient; intensity: .2"></a-entity>
 
       <a-entity camera look-controls wasd-controls position="0 1 5"></a-entity>
-    </a-scene> -->
+    </a-scene>
+
+    <div id="video-container"></div>
+
+    <select name="menu-model" id="gltf-menu">
+      <option value="fox">Fox</option>
+      <option value="sofa">Sofa</option>
+    </select>
+
+    <!-- a-scene manipulation -->
+    <script>
+      document
+        .getElementById('gltf-menu')
+        .addEventListener('change', function (e) {
+          const newValue = e.target.value
+          console.log(newValue)
+          activeModel = newValue
+        })
+    </script>
+
+    <!-- p5 script -->
+    <script src="sketch.js"></script>
   </body>
 </html>
