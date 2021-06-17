@@ -6,10 +6,10 @@ AFRAME.registerComponent('headreactive', {
   update: function () {},
   tick: function () {
     const scaleX = d3.scaleLinear().domain([0, 1000]).range([-2, 2])
-    const mappedValueX = scaleX(x)
+    const mappedValueX = scaleX(rx)
 
     const scaleY = d3.scaleLinear().domain([0, 1000]).range([-2, 2])
-    const mappedValueY = scaleY(y)
+    const mappedValueY = scaleY(ry)
 
     // change rotation value of instanced object, y to x, x to y
 
