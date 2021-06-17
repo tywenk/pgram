@@ -13,13 +13,32 @@ a-scene {
   right: 0;
 }
 
-#gltf-menu {
+.custom-select {
   z-index: 20;
   position: absolute;
   top: 0;
   left: 0;
-  width: 150px;
+  width: 400px;
   size: 1;
+}
+
+#gltf-menu select {
+  display: none;
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: '';
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
 }
 
 #gltf-menu option {

@@ -28,8 +28,10 @@
       let y = 1
       let activeModel = 'fox'
     </script>
+
     <!-- creative a-frame component that can rotated by head -->
     <script src="components.js"></script>
+
     <!-- create a-frame scene -->
     <a-scene>
       <a-assets>
@@ -51,16 +53,20 @@
           src="assets\gltf\sofa.glb"
         ></a-asset-items>
 
-        <a-asset-items id="sky"></a-asset-items>
+        <a-asset-items
+          id="sky"
+          src="assets\hdri\photo_studio_01.jpg"
+        ></a-asset-items>
       </a-assets>
 
-      <!-- <a-sky src="#sky"></a-sky> -->
+      <a-sky src="#sky"></a-sky>
 
       <a-entity
         gltf-model="#fox"
         position="0 0 0"
         scale="0.01 0.01 0.01"
         rotation="0 0 0"
+        shadow="cast: true"
         headreactive
         gltfchoice="model: fox"
       ></a-entity>
@@ -70,47 +76,16 @@
         position="0 0 0"
         scale="0.1 0.1 0.1"
         rotation="0 0 0"
+        shadow="cast: true"
         headreactive
         gltfchoice="model: sofa"
       ></a-entity>
-
-      <!--
-      <a-entity
-        geometry="primitive: box"
-        position="0 1 0"
-        rotation="0 0 0"
-        id="box-temp"
-        headreactive
-        gltfchoice
-      ></a-entity>
-      <a-entity
-        geometry="primitive: box"
-        position="0 3 0"
-        rotation="0 0 0"
-        id="box-temp"
-        headreactive
-        gltfchoice
-      ></a-entity
-      ><a-entity
-        geometry="primitive: box"
-        position="1 2 0"
-        rotation="0 0 0"
-        id="box-temp"
-        headreactive
-      ></a-entity
-      ><a-entity
-        geometry="primitive: box"
-        position="0 0 3"
-        rotation="0 0 0"
-        id="box-temp"
-        headreactive
-      ></a-entity> -->
 
       <a-entity
         geometry="primitive: plane; width: 10; height: 10"
         rotation="270 0 0"
         shadow="receive: true;"
-        material="color: darkgreen"
+        material="color: white"
       ></a-entity>
 
       <a-entity camera look-controls wasd-controls position="0 1 5"> </a-entity>
@@ -121,16 +96,16 @@
       ></a-entity>
 
       <a-entity light="type: ambient; intensity: .2"></a-entity>
-
-      <a-entity camera look-controls wasd-controls position="0 1 5"></a-entity>
     </a-scene>
 
     <div id="video-container"></div>
 
-    <select name="menu-model" id="gltf-menu">
-      <option value="fox">Fox</option>
-      <option value="sofa">Sofa</option>
-    </select>
+    <div class="custom-select">
+      <select name="menu-model" id="gltf-menu">
+        <option value="fox">Fox</option>
+        <option value="sofa">Sofa</option>
+      </select>
+    </div>
 
     <!-- a-scene manipulation -->
     <script>
