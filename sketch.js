@@ -12,7 +12,7 @@ const sensY = -2.5
 const sensX = 1
 
 function setup() {
-  var myCanvas = createCanvas(640, 480)
+  var myCanvas = createCanvas(1280, 720)
   myCanvas.parent('video-container')
 
   video = createCapture(
@@ -52,7 +52,8 @@ function draw() {
   image(video, 0, 0)
 
   if (pose) {
-    stroke(255)
+    stroke(255, 0, 0)
+    fill(255, 0, 0)
 
     //track nose and both ears
     let nose = createVector(pose.nose.x, pose.nose.y)
@@ -78,7 +79,7 @@ function draw() {
     let dy = targetY - ry
     ry += dy * easing
     //draw ellipse
-    fill(255)
+
     strokeWeight(1)
     ellipse(rx, ry, 100, 100)
 
