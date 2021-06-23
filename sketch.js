@@ -7,12 +7,16 @@ console.log('ml5 version:', ml5.version)
 let video
 let poseNet
 let pose
+// let x = 1
+// let y = 1
 let easing = 0.08
 const sensY = -2.5
 const sensX = 1
 
 function setup() {
-  var myCanvas = createCanvas(640, 480)
+  // createCanvas(1280, 720)
+
+  var myCanvas = createCanvas(1280, 720)
   myCanvas.parent('video-container')
 
   video = createCapture(
@@ -71,16 +75,16 @@ function draw() {
 
     //ease jittery-ness
     let targetX = posX
-    let dx = targetX - rx
-    rx += dx * easing
+    let dx = targetX - x
+    x += dx * easing
 
     let targetY = posY
-    let dy = targetY - ry
-    ry += dy * easing
+    let dy = targetY - y
+    y += dy * easing
     //draw ellipse
     fill(255)
     strokeWeight(1)
-    ellipse(rx, ry, 100, 100)
+    ellipse(x, y, 100, 100)
 
     strokeWeight(24)
     for (let i = 0; i < 5; i++) {
