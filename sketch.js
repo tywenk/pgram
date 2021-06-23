@@ -78,8 +78,12 @@ function draw() {
     let targetY = posY
     let dy = targetY - ry
     ry += dy * easing
-    //draw ellipse
 
+    let targetZ = distEarsX
+    let dz = targetZ - sz
+    sz += dz * easing
+
+    //draw ellipse
     strokeWeight(1)
     ellipse(rx, ry, 100, 100)
 

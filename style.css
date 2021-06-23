@@ -5,6 +5,13 @@ body {
 a-scene {
 }
 
+@font-face {
+  font-family: JetBrains Mono;
+  src: url(assets\fonts\JetBrainsMono-Regular.woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
 #video-container {
   z-index: 20;
   position: absolute;
@@ -13,16 +20,16 @@ a-scene {
   right: 0;
 }
 
+select {
+  font-size: 1.5rem;
+  width: 400px;
+}
 .custom-select {
   z-index: 20;
   position: absolute;
   top: 0;
   left: 0;
-  width: 400px;
-  size: 1;
 }
-
-
 
 #gltf-menu select {
   display: none;

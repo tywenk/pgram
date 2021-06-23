@@ -11,10 +11,14 @@ AFRAME.registerComponent('headreactive', {
     const scaleY = d3.scaleLinear().domain([0, 1000]).range([-2, 2])
     const mappedValueY = scaleY(ry)
 
+    const zoomZ = d3.scaleLinear().domain([100, 400]).range([1, 3])
+    const mappedValueZ = zoomZ(sz)
+
     // change rotation value of instanced object, y to x, x to y
 
     const objRotX = (this.el.object3D.rotation.y = mappedValueX)
     const objRotY = (this.el.object3D.rotation.x = mappedValueY)
+    const objZoomZ = (this.el.object3D.position.z = mappedValueZ)
   },
   remove: function () {},
   pause: function () {},
