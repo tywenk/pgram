@@ -3,10 +3,11 @@ body {
 }
 
 a-scene {
+  z-index: 20;
 }
 
 @font-face {
-  font-family: JetBrains Mono;
+  font-family: 'JetBrains Mono';
   src: url(assets\fonts\JetBrainsMono-Regular.woff2);
   font-weight: 400;
   font-style: normal;
@@ -15,20 +16,26 @@ a-scene {
 #video-container {
   z-index: 20;
   position: absolute;
-  border: 1px solid black;
-  bottom: 0;
-  right: 0;
+  border: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid red;
 }
 
 select {
-  font-size: 1.5rem;
-  width: 400px;
+  font-size: 2rem;
+  padding: 0.5em 10em 0.5em 0.5em;
+  background: black;
+  color: white;
+  border: 0;
 }
+
 .custom-select {
   z-index: 20;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 40px;
+  left: 40px;
 }
 
 #gltf-menu select {

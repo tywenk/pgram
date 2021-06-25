@@ -48,8 +48,9 @@ function modelLoaded() {
 }
 
 function draw() {
-  background(200)
-  image(video, 0, 0)
+  clear()
+
+  // image(video, 0, 0)
 
   if (pose) {
     stroke(255, 0, 0)

@@ -83,14 +83,20 @@
         gltfchoice="model: sofa"
       ></a-entity>
 
-      <a-entity
-        geometry="primitive: plane; width: 10; height: 10"
+      <!-- <a-entity
+        geometry="primitive: circle; radius:10"
         rotation="270 0 0"
         shadow="receive: true;"
         material="color: white"
-      ></a-entity>
+      ></a-entity> -->
 
-      <a-entity camera look-controls wasd-controls position="0 1 5"> </a-entity>
+      <a-entity
+        camera
+        look-controls="false"
+        wasd-controls="false"
+        position="0 1 5"
+      >
+      </a-entity>
 
       <a-entity
         light="type: point; castShadow: true"
