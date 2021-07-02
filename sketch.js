@@ -7,7 +7,7 @@ console.log('ml5 version:', ml5.version)
 let video
 let poseNet
 let pose
-let easing = 0.08
+let easing = 0.03
 const sensY = -2.5
 const sensX = 1
 
@@ -86,7 +86,7 @@ function draw() {
 
     //draw ellipse
     strokeWeight(1)
-    ellipse(rx, ry, 100, 100)
+    ellipse(rx, ry, 40, 40)
 
     strokeWeight(24)
     for (let i = 0; i < 5; i++) {

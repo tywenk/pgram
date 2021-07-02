@@ -20,6 +20,8 @@
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
     <!-- d3 -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- draco -->
+    <script src="https://www.gstatic.com/draco/versioned/decoders/1.4.1/draco_decoder.js"></script>
   </head>
   <body>
     <!-- declare x & y head rotation values -->
@@ -27,31 +29,33 @@
       let rx = 1
       let ry = 1
       let sz = 5
-      let activeModel = 'fox'
+      let activeModel = 'flower-wall'
     </script>
 
     <!-- creative a-frame component that can rotated by head -->
     <script src="components.js"></script>
 
-    <!-- create a-frame scene -->
-    <a-scene>
+    <!-- create a-frame scene (dracoDecoder needed to import Blender-compressed GLTF models)-->
+    <a-scene
+      gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/"
+      vr-mode-ui="enabled: false"
+      shadow="type: pcf"
+      renderer="gammaOutput: true"
+    >
       <a-assets>
         <a-asset-items
-          id="tree"
-          response-type="array-buffer"
-          src="assets\gltf\wallingford-cherry-tree.glb"
+          id="flower-wall"
+          src="assets\gltf\wallingford-flowers-GLTF-v4.gltf"
         ></a-asset-items>
 
         <a-asset-items
-          id="fox"
-          response-type="array-buffer"
-          src="assets\gltf\fox.glb"
+          id="cherry-tree"
+          src="assets\gltf\wallingford-cherry-tree-GLTF-v9.gltf"
         ></a-asset-items>
 
         <a-asset-items
-          id="sofa"
-          response-type="array-buffer"
-          src="assets\gltf\sofa.glb"
+          id="prairie"
+          src="assets\gltf\wichita-GLTF-v1.gltf"
         ></a-asset-items>
 
         <a-asset-items
@@ -64,29 +68,41 @@
       <a-sky color="white"></a-sky>
 
       <a-entity
-        gltf-model="#fox"
+        gltf-model="#flower-wall"
         position="0 0 0"
-        scale="0.01 0.01 0.01"
+        scale="0.25 0.25 0.25"
         rotation="0 0 0"
-        shadow="cast: true"
+        shadow="cast: false"
         headreactive
-        gltfchoice="model: fox"
+        gltfchoice="model: flower-wall"
       ></a-entity>
 
       <a-entity
-        gltf-model="#sofa"
+        gltf-model="#cherry-tree"
         position="0 0 0"
-        scale="0.1 0.1 0.1"
+        scale="0.25 0.25 0.25"
         rotation="0 0 0"
-        shadow="cast: true"
+        shadow="cast: false"
         headreactive
-        gltfchoice="model: sofa"
+        gltfchoice="model: cherry-tree"
       ></a-entity>
 
+      <a-entity
+        gltf-model="#prairie"
+        position="0 0 0"
+        scale="0.25 0.25 0.25"
+        rotation="0 0 0"
+        shadow="cast: false"
+        headreactive
+        gltfchoice="model: prairie"
+      ></a-entity>
+
+      <!-- base -->
       <!-- <a-entity
-        geometry="primitive: circle; radius:10"
+        geometry="primitive: circle; radius:900"
+        position="0 -3 0"
         rotation="270 0 0"
-        shadow="receive: true;"
+        shadow="receive: false;"
         material="color: white"
       ></a-entity> -->
 
@@ -98,20 +114,21 @@
       >
       </a-entity>
 
-      <a-entity
-        light="type: point; castShadow: true"
-        position="3 6 5"
+      <!-- <a-entity
+        light="type: point; intensity: 1; castShadow: false"
+        position="0 1 5"
       ></a-entity>
 
-      <a-entity light="type: ambient; intensity: .2"></a-entity>
+      <a-entity light="type: ambient; intensity: .3"></a-entity> -->
     </a-scene>
 
     <div id="video-container"></div>
 
     <div class="custom-select">
       <select name="menu-model" id="gltf-menu">
-        <option value="fox">Fox</option>
-        <option value="sofa">Sofa</option>
+        <option value="flower-wall">Flower Wall</option>
+        <option value="cherry-tree">Cherry Tree</option>
+        <option value="prairie">Wild Prairie</option>
       </select>
     </div>
 

@@ -14,7 +14,7 @@ a-scene {
 }
 
 #video-container {
-  z-index: 20;
+  z-index: 22;
   position: absolute;
   border: 1px;
   top: 50%;
