@@ -59,6 +59,21 @@
         ></a-asset-items>
 
         <a-asset-items
+          id="muni"
+          src="assets\gltf\sanfrancisco-muni-GLTF-v1.gltf"
+        ></a-asset-items>
+
+        <a-asset-items
+          id="hill"
+          src="assets\gltf\sf-hill-GLTF-v1.gltf"
+        ></a-asset-items>
+
+        <a-asset-items
+          id="signage-sf"
+          src="assets\gltf\sf-signage-GLTF-v1.gltf"
+        ></a-asset-items>
+
+        <a-asset-items
           id="sky"
           src="assets\hdri\photo_studio_01.jpg"
         ></a-asset-items>
@@ -97,6 +112,36 @@
         gltfchoice="model: prairie"
       ></a-entity>
 
+      <a-entity
+        gltf-model="#muni"
+        position="0 0 0"
+        scale="0.25 0.25 0.25"
+        rotation="0 0 0"
+        shadow="cast: false"
+        headreactive
+        gltfchoice="model: muni"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#hill"
+        position="0 0 0"
+        scale="0.25 0.25 0.25"
+        rotation="0 0 0"
+        shadow="cast: false"
+        headreactive
+        gltfchoice="model: hill"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#signage-sf"
+        position="0 0 0"
+        scale="0.25 0.25 0.25"
+        rotation="0 0 0"
+        shadow="cast: false"
+        headreactive
+        gltfchoice="model: signage-sf"
+      ></a-entity>
+
       <!-- base -->
       <!-- <a-entity
         geometry="primitive: circle; radius:900"
@@ -124,11 +169,22 @@
 
     <div id="video-container"></div>
 
+    <div id="instructions">
+      Rotate head to look around. <br />
+      Get closer to the screen to zoom in.
+    </div>
+    <div id="about">
+      Tywen Kelly <a href="https://tywenkelly.com/">Website</a>
+    </div>
+
     <div class="custom-select">
       <select name="menu-model" id="gltf-menu">
-        <option value="flower-wall">Flower Wall</option>
-        <option value="cherry-tree">Cherry Tree</option>
-        <option value="prairie">Wild Prairie</option>
+        <option value="flower-wall">Flower Wall (Wallingford, Seattle)</option>
+        <option value="cherry-tree">Cherry Tree (Wallingford, Seattle)</option>
+        <option value="prairie">Wild Prairie (Tallgrass Prairie NP, KS)</option>
+        <option value="muni">Muni Station (San Francisco, CA)</option>
+        <option value="hill">Steep Hill (San Francisco, CA)</option>
+        <option value="signage-sf">Corner Dining (San Francisco, CA)</option>
       </select>
     </div>
 

@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font: 'JetBrains Mono';
 }
 
 a-scene {
@@ -13,8 +14,26 @@ a-scene {
   font-style: normal;
 }
 
+#instructions {
+  position: absolute;
+  z-index: 21;
+  font-size: 2rem;
+  color: black;
+  top: 140px;
+  left: 50px;
+}
+
+#about {
+  position: absolute;
+  z-index: 21;
+  font-size: 2rem;
+  color: black;
+  bottom: 100px;
+  right: 100px;
+}
+
 #video-container {
-  z-index: 22;
+  z-index: 1;
   position: absolute;
   border: 1px;
   top: 50%;
@@ -25,7 +44,7 @@ a-scene {
 
 select {
   font-size: 2rem;
-  padding: 0.5em 10em 0.5em 0.5em;
+  padding: 0.5em 3em 0.5em 0.5em;
   background: black;
   color: white;
   border: 0;
