@@ -17,7 +17,7 @@ a-scene {
 #instructions {
   position: absolute;
   z-index: 21;
-  font-size: 2rem;
+  font-size: 1rem;
   color: black;
   top: 140px;
   left: 50px;
