@@ -74,6 +74,16 @@
         ></a-asset-items>
 
         <a-asset-items
+          id="discovery"
+          src="assets\gltf\discovery2-briccolage-GLTF-v1.gltf"
+        ></a-asset-items>
+
+        <a-asset-items
+          id="napali"
+          src="assets\gltf\hibiscus-GLTF-v1.gltf"
+        ></a-asset-items>
+
+        <a-asset-items
           id="sky"
           src="assets\hdri\photo_studio_01.jpg"
         ></a-asset-items>
@@ -142,6 +152,26 @@
         gltfchoice="model: signage-sf"
       ></a-entity>
 
+      <a-entity
+        gltf-model="#discovery"
+        position="0 0 0"
+        scale="0.15 0.15 0.15"
+        rotation="0 0 0"
+        shadow="cast: false"
+        headreactive
+        gltfchoice="model: discovery"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#napali"
+        position="0 0 0"
+        scale="0.25 0.25 0.25"
+        rotation="0 0 0"
+        shadow="cast: false"
+        headreactive
+        gltfchoice="model: napali"
+      ></a-entity>
+
       <!-- base -->
       <!-- <a-entity
         geometry="primitive: circle; radius:900"
@@ -179,9 +209,11 @@
 
     <div class="custom-select">
       <select name="menu-model" id="gltf-menu">
-        <option value="flower-wall">Flower Wall (Wallingford, Seattle)</option>
-        <option value="cherry-tree">Cherry Tree (Wallingford, Seattle)</option>
+        <option value="flower-wall">Flower Wall (Seattle, WA)</option>
+        <option value="cherry-tree">Cherry Tree (Seattle, WA)</option>
+        <option value="discovery">Discovery Park (Seattle, WA)</option>
         <option value="prairie">Wild Prairie (Tallgrass Prairie NP, KS)</option>
+        <option value="napali">Napali Coast (Kauai, HI)</option>
         <option value="muni">Muni Station (San Francisco, CA)</option>
         <option value="hill">Steep Hill (San Francisco, CA)</option>
         <option value="signage-sf">Corner Dining (San Francisco, CA)</option>
