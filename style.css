@@ -1,79 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   margin: 0;
-  font: 'JetBrains Mono';
+  font-family: 'Comfortaa', cursive;
 }
 
 a-scene {
-  z-index: 20;
+  z-index: 100;
 }
 
-@font-face {
-  font-family: 'JetBrains Mono';
-  src: url(assets\fonts\JetBrainsMono-Regular.woff2);
-  font-weight: 400;
-  font-style: normal;
+#splash {
+  z-index: 150;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.splash-content {
+  z-index: 150;
+  position: absolute;
+  width: 100;
+  height: 2em;
+  padding: 16px;
+  border: 2px solid white;
+
+  font-size: 1rem;
+  font-family: 'Comfortaa', cursive;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  z-index: 150;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 0.25rem solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  animation: spin 1s infinite linear;
+  margin: 2px;
 }
 
 #instructions {
   position: absolute;
-  z-index: 21;
+  z-index: 150;
   font-size: 1rem;
   color: black;
-  top: 140px;
-  left: 50px;
+  top: 6rem;
+  left: 2.7rem;
+  display: none;
 }
 
 #about {
   position: absolute;
-  z-index: 21;
-  font-size: 2rem;
+  z-index: 150;
+  font-size: 1rem;
   color: black;
-  bottom: 100px;
-  right: 100px;
+  bottom: 1rem;
+  right: 1rem;
 }
 
 #video-container {
-  z-index: 1;
+  z-index: 10;
   position: absolute;
   border: 1px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 5px solid red;
+  display: none;
 }
 
 select {
-  font-size: 2rem;
-  padding: 0.5em 3em 0.5em 0.5em;
+  z-index: 125;
+  font-size: 1rem;
+  font-family: 'Comfortaa', cursive;
+  padding: 0.3em 3em 0.3em 0.5em;
   background: black;
   color: white;
   border: 0;
 }
 
 .custom-select {
-  z-index: 20;
+  z-index: 125;
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 1rem;
+  left: 1rem;
 }
 
 #gltf-menu select {
   display: none;
-}
-
-.select-selected {
-  background-color: DodgerBlue;
-}
-
-.select-selected:after {
-  position: absolute;
-  content: '';
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
 }
 
 #gltf-menu option {

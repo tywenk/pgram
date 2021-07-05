@@ -1,7 +1,10 @@
 <!-- 
   
   Tywen Kelly
-  Marc Schroeder 
+  
+  Many thanks to Marc Schroeder for guidance
+
+  2020
 
 -->
 
@@ -11,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Worlding</title>
     <link rel="stylesheet" href="style.css" />
-
     <!-- a-frame -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <!-- p5 -->
@@ -20,10 +22,17 @@
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
     <!-- d3 -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <!-- draco -->
-    <script src="https://www.gstatic.com/draco/versioned/decoders/1.4.1/draco_decoder.js"></script>
   </head>
+
   <body>
+    <!-- splash and loading screen -->
+    <div id="splash">
+      <div class="splash-content">
+        Loading...
+        <div class="loading"></div>
+      </div>
+    </div>
+
     <!-- declare x & y head rotation values -->
     <script>
       let rx = 1
@@ -32,61 +41,73 @@
       let activeModel = 'flower-wall'
     </script>
 
-    <!-- creative a-frame component that can rotated by head -->
+    <!-- creative a-frame component for head rotation, model choosing, and logging-->
     <script src="components.js"></script>
 
-    <!-- create a-frame scene (dracoDecoder needed to import Blender-compressed GLTF models)-->
+    <!-- create a-frame scene **dracoDecoder needed to import Blender-compressed GLTF models-->
     <a-scene
       gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/"
       vr-mode-ui="enabled: false"
       shadow="type: pcf"
-      renderer="gammaOutput: true"
-      loading-screen="dotsColor: red; backgroundColor: black"
+      renderer="colorManagement: true;"
     >
       <a-assets>
         <a-asset-items
           id="flower-wall"
           src="assets\gltf\wallingford-flowers-GLTF-v4.gltf"
-        ></a-asset-items>
+          preload="auto"
+          loaded
+        >
+        </a-asset-items>
 
         <a-asset-items
           id="cherry-tree"
           src="assets\gltf\wallingford-cherry-tree-GLTF-v9.gltf"
-        ></a-asset-items>
+          preload="auto"
+        >
+        </a-asset-items>
 
         <a-asset-items
           id="prairie"
           src="assets\gltf\wichita-GLTF-v1.gltf"
+          preload="auto"
         ></a-asset-items>
 
         <a-asset-items
           id="muni"
           src="assets\gltf\sanfrancisco-muni-GLTF-v1.gltf"
+          preload="auto"
         ></a-asset-items>
 
         <a-asset-items
           id="hill"
           src="assets\gltf\sf-hill-GLTF-v1.gltf"
+          preload="auto"
         ></a-asset-items>
 
         <a-asset-items
           id="signage-sf"
           src="assets\gltf\sf-signage-GLTF-v1.gltf"
+          preload="auto"
         ></a-asset-items>
 
         <a-asset-items
           id="discovery"
           src="assets\gltf\discovery2-briccolage-GLTF-v1.gltf"
-        ></a-asset-items>
+          preload="auto"
+        >
+        </a-asset-items>
 
         <a-asset-items
           id="napali"
           src="assets\gltf\hibiscus-GLTF-v1.gltf"
+          preload="auto"
         ></a-asset-items>
 
         <a-asset-items
           id="sky"
           src="assets\hdri\photo_studio_01.jpg"
+          preload="auto"
         ></a-asset-items>
       </a-assets>
 
@@ -101,6 +122,7 @@
         shadow="cast: false"
         headreactive
         gltfchoice="model: flower-wall"
+        log="Flower Wall Loaded"
       ></a-entity>
 
       <a-entity
@@ -111,6 +133,7 @@
         shadow="cast: false"
         headreactive
         gltfchoice="model: cherry-tree"
+        log="Cherry Tree Loaded"
       ></a-entity>
 
       <a-entity
@@ -121,6 +144,7 @@
         shadow="cast: false"
         headreactive
         gltfchoice="model: prairie"
+        log="Wild Prairie Loaded"
       ></a-entity>
 
       <a-entity
@@ -131,6 +155,7 @@
         shadow="cast: false"
         headreactive
         gltfchoice="model: muni"
+        log="Muni Station Loaded"
       ></a-entity>
 
       <a-entity
@@ -141,6 +166,7 @@
         shadow="cast: false"
         headreactive
         gltfchoice="model: hill"
+        log="Steep Hill Loaded"
       ></a-entity>
 
       <a-entity
@@ -151,6 +177,7 @@
         shadow="cast: false"
         headreactive
         gltfchoice="model: signage-sf"
+        log="Corner Dining Loaded"
       ></a-entity>
 
       <a-entity
@@ -161,6 +188,7 @@
         shadow="cast: false"
         headreactive
         gltfchoice="model: discovery"
+        log="Discovery Park Loaded"
       ></a-entity>
 
       <a-entity
@@ -171,41 +199,26 @@
         shadow="cast: false"
         headreactive
         gltfchoice="model: napali"
+        log="Napali Coast Loaded"
       ></a-entity>
-
-      <!-- base -->
-      <!-- <a-entity
-        geometry="primitive: circle; radius:900"
-        position="0 -3 0"
-        rotation="270 0 0"
-        shadow="receive: false;"
-        material="color: white"
-      ></a-entity> -->
 
       <a-entity
         camera
         look-controls="false"
         wasd-controls="false"
-        position="0 1 5"
-      >
-      </a-entity>
-
-      <!-- <a-entity
-        light="type: point; intensity: 1; castShadow: false"
-        position="0 1 5"
+        position="0 1.2 5"
+        rotation="0 0 0"
       ></a-entity>
-
-      <a-entity light="type: ambient; intensity: .3"></a-entity> -->
     </a-scene>
 
     <div id="video-container"></div>
 
     <div id="instructions">
-      Rotate head to look around. <br />
-      Get closer to the screen to zoom in.
+      Rotate head to look around. Get closer to the screen to zoom in.
     </div>
+
     <div id="about">
-      Tywen Kelly <a href="https://tywenkelly.com/">Website</a>
+      <a href="https://tywenkelly.com/">Tywen Kelly</a>
     </div>
 
     <div class="custom-select">
@@ -223,6 +236,7 @@
 
     <!-- a-scene manipulation -->
     <script>
+      //menu chooser toggle
       document
         .getElementById('gltf-menu')
         .addEventListener('change', function (e) {
@@ -230,6 +244,16 @@
           console.log(newValue)
           activeModel = newValue
         })
+
+      // make splash&loading screen invis when scene is fully loaded
+      document.addEventListener('DOMContentLoaded', function () {
+        let scene = document.querySelector('a-scene')
+        let splash = document.querySelector('#splash')
+        scene.addEventListener('loaded', function (e) {
+          splash.style.display = 'none'
+          console.log('a-scene has been loaded')
+        })
+      })
     </script>
 
     <!-- p5 script -->

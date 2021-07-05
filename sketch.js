@@ -8,8 +8,9 @@ let video
 let poseNet
 let pose
 let easing = 0.03
+const yGap = -40
 const sensY = -2.5
-const sensX = 1
+const sensX = 1.5
 
 function setup() {
   var myCanvas = createCanvas(1280, 720)
@@ -22,7 +23,11 @@ function setup() {
           minWidth: 1280,
           minHeight: 720,
         },
-        optional: [{ maxFrameRate: 30 }],
+        optional: [
+          {
+            maxFrameRate: 30,
+          },
+        ],
       },
       audio: false,
     },
@@ -66,7 +71,8 @@ function draw() {
     distX = ((nose.x - rEar.x) / distEarsX) * sensX
     posX = map(distX, 0, 1, 0, width)
 
-    distNoseY = (lEar.y + rEar.y) / 2 - nose.y
+    //distance for y rotation
+    distNoseY = (lEar.y + rEar.y) / 2 - nose.y + yGap
     distY = (distNoseY / distEarsX) * sensY
     posY = map(distY, -1, 1, 0, height)
     // console.log(`posy is ${posY}`)
