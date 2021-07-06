@@ -26,12 +26,16 @@
 
   <body>
     <!-- splash and loading screen div-->
+
     <div id="splash">
       <div class="splash-content">
         <div id="instructions">
           Rotate head to look around. Get closer to the screen to zoom in.
         </div>
-        <div class="loading"></div>
+        <div id="loading-content">
+          <div id="percentage">0%</div>
+          <div class="loading"></div>
+        </div>
       </div>
     </div>
 
@@ -215,44 +219,7 @@
     </div>
 
     <!-- a-scene manipulation -->
-    <script>
-      //menu chooser toggle
-      document
-        .getElementById('gltf-menu')
-        .addEventListener('change', function (e) {
-          const newValue = e.target.value
-          console.log(newValue)
-          activeModel = newValue
-        })
-
-      // check if a-scene is loaded
-      document.addEventListener('DOMContentLoaded', function () {
-        let scene = document.querySelector('a-scene')
-        let splash = document.querySelector('#splash')
-        scene.addEventListener('loaded', function (e) {
-          // splash.style.display = 'none'
-          console.log('a-scene has been loaded')
-        })
-      })
-
-      // make splash&loading screen invis when entities are fully loaded
-      document
-        .querySelector('a-entity')
-        .addEventListener('model-loaded', function () {
-          splash.style.display = 'none'
-          console.log('a-entities have been loaded')
-        })
-
-      let ents = document.querySelectorAll('a-entity')
-      let totalGltf = ents.length - 1
-      let counter = 0
-
-      console.log(ents[5])
-
-      for (let i = 0; i < totalGltf; i++) {
-        ents[i].addEventListener('model-loaded', () => {})
-      }
-    </script>
+    <script src="utils.js"></script>
 
     <!-- p5 script -->
     <script src="sketch.js"></script>
