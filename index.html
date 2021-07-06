@@ -250,10 +250,17 @@
         let scene = document.querySelector('a-scene')
         let splash = document.querySelector('#splash')
         scene.addEventListener('loaded', function (e) {
-          splash.style.display = 'none'
+          // splash.style.display = 'none'
           console.log('a-scene has been loaded')
         })
       })
+
+      document
+        .querySelector('a-entity')
+        .addEventListener('model-loaded', function () {
+          splash.style.display = 'none'
+          console.log('a-entities have been loaded')
+        })
     </script>
 
     <!-- p5 script -->

@@ -96,7 +96,7 @@ a-scene {
 select {
   z-index: 125;
   font-size: 1rem;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa';
   padding: 0.3em 3em 0.3em 0.5em;
   background: black;
   color: white;
@@ -108,6 +108,7 @@ select {
   position: absolute;
   top: 1rem;
   left: 1rem;
+  font-family: 'Comfortaa';
 }
 
 #gltf-menu select {
