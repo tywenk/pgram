@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('assets/fonts/Comfortaa-Medium.ttf') format('truetype');
+}
 
 @keyframes spin {
   0% {
@@ -12,7 +15,7 @@
 
 body {
   margin: 0;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa';
 }
 
 a-scene {
