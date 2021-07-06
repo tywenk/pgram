@@ -5,8 +5,8 @@ let poseNet
 let pose
 let easing = 0.03
 const yGap = -40
-const sensY = -2.5
-const sensX = 1.5
+const sensY = -1
+const sensX = 1
 
 function setup() {
   var myCanvas = createCanvas(1280, 720)
@@ -31,12 +31,29 @@ function setup() {
   )
 
   video.hide()
-  poseNet = ml5.poseNet(video, modelLoaded)
+  poseNet = ml5.poseNet(
+    video,
+    {
+      architecture: 'MobileNetV1',
+      imageScaleFactor: 0.3,
+      outputStride: 16,
+      flipHorizontal: false,
+      minConfidence: 0.5,
+      maxPoseDetections: 5,
+      scoreThreshold: 0.5,
+      nmsRadius: 20,
+      detectionType: 'single',
+      inputResolution: 161,
+      multiplier: 0.75,
+      quantBytes: 2,
+    },
+    modelLoaded
+  )
   poseNet.on('pose', gotPoses)
 }
 
 function gotPoses(poses) {
-  // console.log(poses)
+  // console.group(poses)
 
   if (poses.length > 0) {
     pose = poses[0].pose
@@ -45,7 +62,7 @@ function gotPoses(poses) {
 }
 
 function modelLoaded() {
-  console.log('poseNet ready')
+  console.log('poseNet loaded')
 }
 
 function draw() {
@@ -65,13 +82,12 @@ function draw() {
     //use distance between nose and ears to estimate face orientation
     distEarsX = lEar.x - rEar.x
     distX = ((nose.x - rEar.x) / distEarsX) * sensX
-    posX = map(distX, 0, 1, 0, width)
+    posX = map(distX, 0, 1, 0, width, [0, width])
 
     //distance for y rotation
     distNoseY = (lEar.y + rEar.y) / 2 - nose.y + yGap
     distY = (distNoseY / distEarsX) * sensY
-    posY = map(distY, -1, 1, 0, height)
-    // console.log(`posy is ${posY}`)
+    posY = map(distY, -1, 1, 0, height, [0, height])
 
     //ease jittery-ness
     let targetX = posX
