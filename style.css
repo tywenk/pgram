@@ -39,10 +39,10 @@ a-scene {
 .splash-content {
   z-index: 150;
   position: relative;
-  width: 100;
-  height: 3em;
+  width: 30%;
+  height: 4em;
   padding: 16px;
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   font-size: 1rem;
   font-family: 'Comfortaa';
   color: white;
@@ -54,20 +54,32 @@ a-scene {
 #loading-content {
   z-index: 150;
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: 4em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#spinner-container {
+  position: relative;
+  right: 0em;
+  z-index: 150;
+  width: 3em;
+  height: 3em;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.loading {
+.spinner {
   z-index: 150;
   position: absolute;
-  width: 3em;
-  height: 3em;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  border: 0.3rem solid rgba(255, 255, 255, 0.2);
+  border: 0.4rem solid rgba(255, 255, 255, 0.2);
   border-top-color: white;
   animation: spin 1s infinite linear;
   margin: 2px;
@@ -87,7 +99,7 @@ a-scene {
   position: relative;
   color: white;
   font-size: 1rem;
-  margin: 1em;
+  width: 70%;
 }
 
 #about {

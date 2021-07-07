@@ -63,6 +63,7 @@ function gotPoses(poses) {
 
 function modelLoaded() {
   console.log('poseNet loaded')
+  poseModelLoaded = true
 }
 
 function draw() {
