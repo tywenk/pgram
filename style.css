@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Comfortaa';
-  src: url('assets/fonts/Comfortaa-Medium.ttf') format('truetype');
+  font-family: "Comfortaa";
+  src: url("assets/fonts/Comfortaa-Medium.ttf") format("truetype");
 }
 
 @keyframes spin {
@@ -15,7 +15,7 @@
 
 body {
   margin: 0;
-  font-family: 'Comfortaa';
+  font-family: "Comfortaa";
 }
 
 a-scene {
@@ -44,7 +44,7 @@ a-scene {
   padding: 16px;
   border: 2px solid rgba(255, 255, 255, 0.2);
   font-size: 1rem;
-  font-family: 'Comfortaa';
+  font-family: "Comfortaa";
   color: white;
   display: flex;
   align-items: center;
@@ -125,7 +125,7 @@ a-scene {
 select {
   z-index: 125;
   font-size: 1rem;
-  font-family: 'Comfortaa';
+  font-family: "Comfortaa";
   padding: 0.3em 3em 0.3em 0.5em;
   background: black;
   color: white;
@@ -137,7 +137,7 @@ select {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  font-family: 'Comfortaa';
+  font-family: "Comfortaa";
 }
 
 #gltf-menu select {

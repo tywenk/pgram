@@ -26,7 +26,6 @@
 
   <body>
     <!-- splash and loading screen div-->
-
     <div id="splash">
       <div class="splash-content">
         <div id="loading-content">
@@ -34,7 +33,7 @@
             Rotate head to look around. Move closer to zoom in.
           </div>
           <div id="spinner-container">
-            <div id="percentage">0%</div>
+            <div id="percentage">5%</div>
             <div class="spinner"></div>
           </div>
         </div>
@@ -43,11 +42,11 @@
 
     <!-- declare x & y head rotation values -->
     <script>
-      let rx = 1
-      let ry = 1
-      let sz = 5
-      let activeModel = 'flower-wall'
-      let poseModelLoaded = false
+      let rx = 1;
+      let ry = 1;
+      let sz = 5;
+      let activeModel = "flower-wall";
+      let poseModelLoaded = false;
     </script>
 
     <!-- creative a-frame component for head rotation, model choosing, and logging-->
@@ -135,7 +134,7 @@
 
       <a-entity
         gltf-model="#prairie"
-        position="0 0 0"
+        position="0 0.2 0"
         scale="0.25 0.25 0.25"
         rotation="0 0 0"
         shadow="cast: false"
@@ -156,7 +155,7 @@
       <a-entity
         gltf-model="#hill"
         position="0 0 0"
-        scale="0.25 0.25 0.25"
+        scale="0.18 0.18 0.18"
         rotation="0 0 0"
         shadow="cast: false"
         headreactive
@@ -165,8 +164,8 @@
 
       <a-entity
         gltf-model="#signage-sf"
-        position="0 0 0"
-        scale="0.25 0.25 0.25"
+        position="0 0.3 0"
+        scale="0.18 0.18 0.18"
         rotation="0 0 0"
         shadow="cast: false"
         headreactive
@@ -175,7 +174,7 @@
 
       <a-entity
         gltf-model="#discovery"
-        position="0 0 0"
+        position="0 0.1 0"
         scale="0.15 0.15 0.15"
         rotation="0 0 0"
         shadow="cast: false"
@@ -186,7 +185,7 @@
       <a-entity
         gltf-model="#napali"
         position="0 0 0"
-        scale="0.25 0.25 0.25"
+        scale="0.2 0.2 0.2"
         rotation="0 0 0"
         shadow="cast: false"
         headreactive
