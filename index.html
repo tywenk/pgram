@@ -30,7 +30,8 @@
       <div class="splash-content">
         <div id="loading-content">
           <div id="instructions">
-            Rotate head to look around. Move closer to zoom in.
+            Rotate head to look around. <br />
+            Move closer to zoom in.
           </div>
           <div id="spinner-container">
             <div id="percentage">3%</div>
@@ -46,7 +47,6 @@
       let ry = 1;
       let sz = 5;
       let activeModel = "flower-wall";
-      let poseModelLoaded = false;
     </script>
 
     <!-- creative a-frame component for head rotation, model choosing, and logging-->
@@ -108,6 +108,7 @@
 
       <a-entity position="0 0 0" rotation="0 -45 4" scale="0.25 0.25 0.25">
         <a-entity
+          id="modelid"
           gltf-model="#flower-wall"
           position="0 0 0"
           scale="1 1 1"
@@ -120,6 +121,7 @@
 
       <a-entity position="0 0.5 0" rotation="0 -45 0" scale="0.15 0.15 0.15">
         <a-entity
+          id="modelid"
           gltf-model="#cherry-tree"
           position="0 0 0"
           scale="1 1 1"
@@ -130,8 +132,9 @@
         ></a-entity>
       </a-entity>
 
-      <a-entity position="0 0.2 0" rotation="0 -45 0" scale="0.28 0.28 0.28">
+      <a-entity position="0 0.2 0" rotation="0 -45 0" scale="0.21 0.21 0.21">
         <a-entity
+          id="modelid"
           gltf-model="#prairie"
           position="0 0 0"
           scale="1 1 1"
@@ -144,6 +147,7 @@
 
       <a-entity position="0 0 0" rotation="0 30 0" scale="0.29 0.29 0.29">
         <a-entity
+          id="modelid"
           gltf-model="#muni"
           position="0 0 0"
           scale="1 1 1"
@@ -154,8 +158,9 @@
         ></a-entity>
       </a-entity>
 
-      <a-entity position="0 0 0" rotation="0 45 0" scale="0.18 0.18 0.18">
+      <a-entity position="-0.5 0.2 0" rotation="0 -45 0" scale="0.17 0.17 0.17">
         <a-entity
+          id="modelid"
           gltf-model="#hill"
           position="0 0 0"
           scale="1 1 1"
@@ -166,8 +171,9 @@
         ></a-entity>
       </a-entity>
 
-      <a-entity position="0 0.3 0" rotation="0 30 0" scale="0.18 0.18 0.18">
+      <a-entity position="-0.5 0.5 0" rotation="0 -30 0" scale="0.16 0.16 0.16">
         <a-entity
+          id="modelid"
           gltf-model="#signage-sf"
           position="0 0 0"
           scale="1 1 1"
@@ -178,11 +184,11 @@
         ></a-entity>
       </a-entity>
 
-      <a-entity position="3 0.3 0" rotation="0 -45 0" scale="0.15 0.15 0.15">
+      <a-entity position="0 0.4 0" rotation="0 45 -3" scale="0.15 0.15 0.15">
         <a-entity
+          id="modelid"
           gltf-model="#discovery"
-          position="0 0.1 0"
-          scale="0.15 0.15 0.15"
+          position="0 0 0"
           scale="1 1 1"
           shadow="cast: false"
           headreactive="enabled: true"
@@ -190,8 +196,9 @@
         ></a-entity>
       </a-entity>
 
-      <a-entity position="0 0 0" rotation="0 0 0" scale="0.2 0.2 0.2">
+      <a-entity position="0 0.2 .3" rotation="0 45 0" scale="0.2 0.2 0.2">
         <a-entity
+          id="modelid"
           gltf-model="#napali"
           position="0 0 0"
           scale="1 1 1"
@@ -204,8 +211,8 @@
 
       <a-entity
         camera
-        look-controls="false"
-        wasd-controls="false"
+        look-controls="enabled: false"
+        wasd-controls="enabled: false"
         position="0 1.2 5"
         rotation="0 0 0"
       ></a-entity>
@@ -234,14 +241,17 @@
       </div>
       <div id="headreactiveToggle">
         <button
+          id="toggleButton"
           type="button"
           value="true"
-          onclick="toggleHeadreactive()"
-          id="toggleButton"
+          onclick="toggleButtonClick()"
           title="Toggle using head or mouse to rotate models."
         >
-          Use Mouse 🐭
+          Use Cursor 🐭
         </button>
+        <div id="tooltip">
+          Click and drag to rotate view. WASD to move around scene.
+        </div>
       </div>
     </div>
 
@@ -254,21 +264,5 @@
 
     <!-- p5 script -->
     <script src="sketch.js"></script>
-
-    <script>
-      // Check if camera is available, and set option to swap mouse or headreactive
-
-      function toggleHeadreactive() {
-        if (this.value == "true") {
-          this.value = "false";
-          document.getElementById("toggleButton").innerHTML = "Use Face 🥸";
-          // entity.removeAttribute('geometry');
-          // entity.setAttribute('visible', false);
-        } else {
-          this.value = "true";
-          document.getElementById("toggleButton").innerHTML = "Use Mouse 🐭";
-        }
-      }
-    </script>
   </body>
 </html>

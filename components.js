@@ -50,7 +50,7 @@ AFRAME.registerComponent("gltfchoice", {
   },
   update: function () {},
   tick: function () {
-    // console.log(this.model, activeModel)
+    // console.log(this.model, activeModel);
     this.el.object3D.visible = this.data.model === activeModel;
   },
   remove: function () {},
