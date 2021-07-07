@@ -56,8 +56,8 @@ function checkLoaded() {
     ents[i].addEventListener('model-loaded', () => {
       counter++
 
-      console.log('counter: ' + counter)
-      console.log('total gltf: ' + totalGltf)
+      //console.log('counter: ' + counter)
+      //console.log('total gltf: ' + totalGltf)
 
       percentComplete = (counter / totalGltf) * 100
       let percentString = String(Math.round(percentComplete))
