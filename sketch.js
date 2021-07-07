@@ -102,7 +102,7 @@ function draw() {
     let dz = targetZ - sz;
     sz += dz * easing;
 
-    //draw ellipse
+    // draw ellipse
     strokeWeight(1);
     ellipse(rx, ry, 40, 40);
 

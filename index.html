@@ -12,7 +12,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Worlding</title>
+    <title>Worlding Earth</title>
     <link rel="stylesheet" href="style.css" />
     <!-- a-frame -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
@@ -33,7 +33,7 @@
             Rotate head to look around. Move closer to zoom in.
           </div>
           <div id="spinner-container">
-            <div id="percentage">5%</div>
+            <div id="percentage">3%</div>
             <div class="spinner"></div>
           </div>
         </div>
@@ -62,19 +62,19 @@
       <a-assets>
         <a-asset-items
           id="flower-wall"
-          src="assets\gltf\wallingford-flowers-GLTF-v4.gltf"
+          src="assets\gltf\wallingford-flowers-GLTF-v13.gltf"
         >
         </a-asset-items>
 
         <a-asset-items
           id="cherry-tree"
-          src="assets\gltf\wallingford-cherry-tree-GLTF-v9.gltf"
+          src="assets\gltf\wallingford-cherry-tree-GLTF-v10.gltf"
         >
         </a-asset-items>
 
         <a-asset-items
           id="prairie"
-          src="assets\gltf\wichita-GLTF-v1.gltf"
+          src="assets\gltf\wichita-GLTF-v3.gltf"
         ></a-asset-items>
 
         <a-asset-items
@@ -84,12 +84,12 @@
 
         <a-asset-items
           id="hill"
-          src="assets\gltf\sf-hill-GLTF-v1.gltf"
+          src="assets\gltf\sf-hill-GLTF-v3.gltf"
         ></a-asset-items>
 
         <a-asset-items
           id="signage-sf"
-          src="assets\gltf\sf-signage-GLTF-v1.gltf"
+          src="assets\gltf\sf-signage-GLTF-v3.gltf"
         ></a-asset-items>
 
         <a-asset-items
@@ -102,95 +102,105 @@
           id="napali"
           src="assets\gltf\hibiscus-GLTF-v1.gltf"
         ></a-asset-items>
-
-        <a-asset-items
-          id="sky"
-          src="assets\hdri\photo_studio_01.jpg"
-        ></a-asset-items>
       </a-assets>
 
-      <!-- <a-sky src="#sky"></a-sky> -->
       <a-sky color="white"></a-sky>
 
-      <a-entity
-        gltf-model="#flower-wall"
-        position="0 0 0"
-        scale="0.25 0.25 0.25"
-        rotation="0 0 0"
-        shadow="cast: false"
-        headreactive
-        gltfchoice="model: flower-wall"
-      ></a-entity>
+      <a-entity position="0 0 0" rotation="0 -45 4" scale="0.25 0.25 0.25">
+        <a-entity
+          gltf-model="#flower-wall"
+          position="0 0 0"
+          scale="1 1 1"
+          rotation="0 0 0"
+          shadow="cast: false"
+          headreactive="enabled: true"
+          gltfchoice="model: flower-wall"
+        ></a-entity>
+      </a-entity>
 
-      <a-entity
-        gltf-model="#cherry-tree"
-        position="0 0 0"
-        scale="0.25 0.25 0.25"
-        rotation="0 0 0"
-        shadow="cast: false"
-        headreactive
-        gltfchoice="model: cherry-tree"
-      ></a-entity>
+      <a-entity position="0 0.5 0" rotation="0 -45 0" scale="0.15 0.15 0.15">
+        <a-entity
+          gltf-model="#cherry-tree"
+          position="0 0 0"
+          scale="1 1 1"
+          rotation="0 0 0"
+          shadow="cast: false"
+          headreactive="enabled: true"
+          gltfchoice="model: cherry-tree"
+        ></a-entity>
+      </a-entity>
 
-      <a-entity
-        gltf-model="#prairie"
-        position="0 0.2 0"
-        scale="0.25 0.25 0.25"
-        rotation="0 0 0"
-        shadow="cast: false"
-        headreactive
-        gltfchoice="model: prairie"
-      ></a-entity>
+      <a-entity position="0 0.2 0" rotation="0 -45 0" scale="0.28 0.28 0.28">
+        <a-entity
+          gltf-model="#prairie"
+          position="0 0 0"
+          scale="1 1 1"
+          rotation="0 0 0"
+          shadow="cast: false"
+          headreactive="enabled: true"
+          gltfchoice="model: prairie"
+        ></a-entity>
+      </a-entity>
 
-      <a-entity
-        gltf-model="#muni"
-        position="0 0 0"
-        scale="0.25 0.25 0.25"
-        rotation="0 0 0"
-        shadow="cast: false"
-        headreactive
-        gltfchoice="model: muni"
-      ></a-entity>
+      <a-entity position="0 0 0" rotation="0 30 0" scale="0.29 0.29 0.29">
+        <a-entity
+          gltf-model="#muni"
+          position="0 0 0"
+          scale="1 1 1"
+          rotation="0 0 0"
+          shadow="cast: false"
+          headreactive="enabled: true"
+          gltfchoice="model: muni"
+        ></a-entity>
+      </a-entity>
 
-      <a-entity
-        gltf-model="#hill"
-        position="0 0 0"
-        scale="0.18 0.18 0.18"
-        rotation="0 0 0"
-        shadow="cast: false"
-        headreactive
-        gltfchoice="model: hill"
-      ></a-entity>
+      <a-entity position="0 0 0" rotation="0 45 0" scale="0.18 0.18 0.18">
+        <a-entity
+          gltf-model="#hill"
+          position="0 0 0"
+          scale="1 1 1"
+          rotation="0 0 0"
+          shadow="cast: false"
+          headreactive="enabled: true"
+          gltfchoice="model: hill"
+        ></a-entity>
+      </a-entity>
 
-      <a-entity
-        gltf-model="#signage-sf"
-        position="0 0.3 0"
-        scale="0.18 0.18 0.18"
-        rotation="0 0 0"
-        shadow="cast: false"
-        headreactive
-        gltfchoice="model: signage-sf"
-      ></a-entity>
+      <a-entity position="0 0.3 0" rotation="0 30 0" scale="0.18 0.18 0.18">
+        <a-entity
+          gltf-model="#signage-sf"
+          position="0 0 0"
+          scale="1 1 1"
+          rotation="0 0 0"
+          shadow="cast: false"
+          headreactive="enabled: true"
+          gltfchoice="model: signage-sf"
+        ></a-entity>
+      </a-entity>
 
-      <a-entity
-        gltf-model="#discovery"
-        position="0 0.1 0"
-        scale="0.15 0.15 0.15"
-        rotation="0 0 0"
-        shadow="cast: false"
-        headreactive
-        gltfchoice="model: discovery"
-      ></a-entity>
+      <a-entity position="3 0.3 0" rotation="0 -45 0" scale="0.15 0.15 0.15">
+        <a-entity
+          gltf-model="#discovery"
+          position="0 0.1 0"
+          scale="0.15 0.15 0.15"
+          scale="1 1 1"
+          shadow="cast: false"
+          headreactive="enabled: true"
+          gltfchoice="model: discovery"
+        ></a-entity>
+      </a-entity>
 
-      <a-entity
-        gltf-model="#napali"
-        position="0 0 0"
-        scale="0.2 0.2 0.2"
-        rotation="0 0 0"
-        shadow="cast: false"
-        headreactive
-        gltfchoice="model: napali"
-      ></a-entity>
+      <a-entity position="0 0 0" rotation="0 0 0" scale="0.2 0.2 0.2">
+        <a-entity
+          gltf-model="#napali"
+          position="0 0 0"
+          scale="1 1 1"
+          rotation="0 0 0"
+          shadow="cast: false"
+          headreactive="enabled: true"
+          gltfchoice="model: napali"
+        ></a-entity>
+      </a-entity>
 
       <a-entity
         camera
@@ -203,21 +213,40 @@
 
     <div id="video-container"></div>
 
-    <div id="about">
-      <a href="https://tywenkelly.com/">Tywen Kelly</a>
+    <div class="topbar">
+      <div class="custom-select">
+        <select
+          name="menu-model"
+          id="gltf-menu"
+          title="Select a model to view."
+        >
+          <option value="flower-wall">Flower Wall (Seattle, WA)</option>
+          <option value="cherry-tree">Cherry Tree (Seattle, WA)</option>
+          <option value="discovery">Discovery Park (Seattle, WA)</option>
+          <option value="prairie">
+            Wild Prairie (Tallgrass Prairie NP, KS)
+          </option>
+          <option value="napali">Napali Coast (Kauai, HI)</option>
+          <option value="muni">Muni Station (San Francisco, CA)</option>
+          <option value="hill">Steep Hill (San Francisco, CA)</option>
+          <option value="signage-sf">Corner Dining (San Francisco, CA)</option>
+        </select>
+      </div>
+      <div id="headreactiveToggle">
+        <button
+          type="button"
+          value="true"
+          onclick="toggleHeadreactive()"
+          id="toggleButton"
+          title="Toggle using head or mouse to rotate models."
+        >
+          Use Mouse 🐭
+        </button>
+      </div>
     </div>
 
-    <div class="custom-select">
-      <select name="menu-model" id="gltf-menu">
-        <option value="flower-wall">Flower Wall (Seattle, WA)</option>
-        <option value="cherry-tree">Cherry Tree (Seattle, WA)</option>
-        <option value="discovery">Discovery Park (Seattle, WA)</option>
-        <option value="prairie">Wild Prairie (Tallgrass Prairie NP, KS)</option>
-        <option value="napali">Napali Coast (Kauai, HI)</option>
-        <option value="muni">Muni Station (San Francisco, CA)</option>
-        <option value="hill">Steep Hill (San Francisco, CA)</option>
-        <option value="signage-sf">Corner Dining (San Francisco, CA)</option>
-      </select>
+    <div id="about">
+      <a href="https://tywenkelly.com/">Tywen Kelly</a>
     </div>
 
     <!-- a-scene manipulation -->
@@ -225,5 +254,21 @@
 
     <!-- p5 script -->
     <script src="sketch.js"></script>
+
+    <script>
+      // Check if camera is available, and set option to swap mouse or headreactive
+
+      function toggleHeadreactive() {
+        if (this.value == "true") {
+          this.value = "false";
+          document.getElementById("toggleButton").innerHTML = "Use Face 🥸";
+          // entity.removeAttribute('geometry');
+          // entity.setAttribute('visible', false);
+        } else {
+          this.value = "true";
+          document.getElementById("toggleButton").innerHTML = "Use Mouse 🐭";
+        }
+      }
+    </script>
   </body>
 </html>

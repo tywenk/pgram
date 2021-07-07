@@ -43,6 +43,7 @@ a-scene {
   height: 4em;
   padding: 16px;
   border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1em;
   font-size: 1rem;
   font-family: "Comfortaa";
   color: white;
@@ -109,6 +110,7 @@ a-scene {
   color: black;
   bottom: 1rem;
   right: 1rem;
+  filter: drop-shadow(0 0 3rem white);
 }
 
 #video-container {
@@ -118,32 +120,90 @@ a-scene {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 5px solid red;
+  /* border: 5px solid red; */
   display: none;
 }
 
-select {
+.topbar {
+  z-index: 125;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  font-family: "Comfortaa";
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 2em;
+  /* border: 2px solid brown; */
+}
+.custom-select {
+  z-index: 125;
+  position: relative;
+  font-family: "Comfortaa";
+  margin-right: 0.5em;
+}
+
+#gltf-menu {
   z-index: 125;
   font-size: 1rem;
   font-family: "Comfortaa";
-  padding: 0.3em 3em 0.3em 0.5em;
   background: black;
   color: white;
   border: 0;
+  border-radius: 0.2em;
+  padding: 0em 0em 0em 0.5 em;
+  height: 100%;
 }
 
-.custom-select {
+#gltf-menu:hover {
+  background: rgb(46, 46, 46);
+}
+
+#headreactiveToggle {
+  position: relative;
   z-index: 125;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+#toggleButton {
+  background-color: rgb(15, 228, 61);
+  border: 0;
+  border-radius: 0.2em;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
   font-family: "Comfortaa";
+  padding: 0em 0.5em 0em 0.5em;
+  height: 100%;
 }
 
-#gltf-menu select {
-  display: none;
+#toggleButton:hover {
+  background-color: rgb(6, 255, 47);
 }
 
-#gltf-menu option {
-  width: 150px;
+a:link {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(15, 228, 61);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(6, 255, 47);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
 }
