@@ -119,7 +119,7 @@ a-scene {
   left: 50%;
   transform: translate(-50%, -50%);
   border: 5px solid red;
-  display: none;
+  /* display: none; */
 }
 
 select {
