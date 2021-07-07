@@ -51,8 +51,7 @@ function checkLoaded() {
   let totalGltf = ents.length - 1
   let percentComplete
 
-  for (let i = 0; i <= ents.length + 1; i++) {
-    console.log('total gltf: ' + totalGltf)
+  for (let i = 0; i < ents.length + 1; i++) {
     ents[i].addEventListener('model-loaded', () => {
       counter++
 
