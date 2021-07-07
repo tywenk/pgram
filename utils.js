@@ -24,6 +24,26 @@ document
     console.log('a-entities have been loaded')
   })
 
+//check if camera is available
+navigator.getMedia =
+  navigator.getUserMedia || // use the proper vendor prefix
+  navigator.webkitGetUserMedia ||
+  navigator.mozGetUserMedia ||
+  navigator.msGetUserMedia
+
+navigator.getMedia(
+  { video: true },
+  function () {
+    // webcam is available
+    console.log('camera is availabe')
+  },
+  function () {
+    // webcam is not available
+    console.log('camera is NOT availabe')
+  }
+)
+
+//check progress of downloading and loading GLTFs
 function checkLoaded() {
   let counter = 0
   let ents = document.querySelectorAll('a-entity')
