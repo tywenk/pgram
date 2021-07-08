@@ -49,6 +49,30 @@ function checkLoaded() {
   }
 }
 
+// let camAvail = false;
+// navigator.mediaDevices.getUserMedia({ video: true }, function (stream) {
+//   if (stream.getVideoTracks().length > 0) {
+//     camAvail = false;
+//   } else {
+//     camAvail = true;
+//   }
+// });
+
+if (
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+) {
+  // true for mobile device
+  console.log("mobile device");
+  document.getElementById("toggleButton").value = "false";
+  toggleButtonClick();
+  toggleButtonClick();
+} else {
+  // false for not mobile device
+  console.log("not mobile device");
+}
+
 checkLoaded();
 
 function toggleButtonClick() {
@@ -86,16 +110,4 @@ function toggleButtonClick() {
       }
     }
   }
-}
-
-if (
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  )
-) {
-  // true for mobile device
-  document.write("mobile device");
-} else {
-  // false for not mobile device
-  document.write("not mobile device");
 }
