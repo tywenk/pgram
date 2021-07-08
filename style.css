@@ -39,7 +39,8 @@ a-scene {
 .splash-content {
   z-index: 150;
   position: relative;
-  width: 30%;
+  min-width: 300px;
+  max-width: 700px;
   height: 4em;
   padding: 16px;
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -172,6 +173,7 @@ a-scene {
 }
 
 #toggleButton {
+  z-index: 200;
   background-color: rgb(15, 228, 61);
   border: 0;
   border-radius: 0.2em;
@@ -197,13 +199,18 @@ a-scene {
   background-color: rgb(6, 255, 47);
   position: relative;
   height: 100%;
-
-  vertical-align: middle;
 }
 
-#headreactiveToggle:hover #tooltip {
+#tooltip-text {
+  font-family: "Comfortaa";
+  padding: 0em 0.5em 0em 0.5em;
+}
+
+#headreactiveToggle:hover + #tooltip {
   z-index: 125;
-  display: block;
+  display: flex;
+  align-items: center;
+  align-content: center;
   position: relative;
 }
 

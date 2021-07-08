@@ -29,7 +29,7 @@ function checkLoaded() {
   let percentComplete;
 
   if (ents.length == 8) {
-    for (let i = 0; i <= ents.length; i++) {
+    for (let i = 0; i < ents.length; i++) {
       ents[i].addEventListener("model-loaded", () => {
         counter++;
         percentComplete = (counter / totalGltf) * 100;
@@ -53,7 +53,7 @@ checkLoaded();
 
 function toggleButtonClick() {
   const p = document.getElementById("toggleButton");
-  const t = document.getElementById("tooltip");
+  const t = document.getElementById("tooltip-text");
   const models = document.querySelectorAll("#modelid");
   const cam = document.querySelector("a-entity[camera]");
 
