@@ -104,7 +104,7 @@ function draw() {
 
     // draw ellipse
     strokeWeight(1);
-    ellipse(rx, ry, 40, 40);
+    // ellipse(rx, ry, 40, 40);
 
     strokeWeight(24);
     for (let i = 0; i < 5; i++) {
