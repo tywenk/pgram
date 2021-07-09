@@ -67,7 +67,7 @@ if (
   console.log("mobile device");
   document.getElementById("toggleButton").value = "false";
   toggleButtonClick();
-  toggleButtonClick();
+  toggleButtonClick(); //requires two calls to activate button, weirdly
 } else {
   // false for not mobile device
   console.log("not mobile device");
@@ -83,7 +83,7 @@ function toggleButtonClick() {
 
   if (this.value == "true") {
     this.value = "false";
-    p.innerHTML = "Use Face 🥸";
+    p.innerHTML = "Use Face 😎";
     t.innerHTML = "(Requires camera) Rotate head and move closer to navigate.";
 
     cam.setAttribute("look-controls", "enabled", "true");
